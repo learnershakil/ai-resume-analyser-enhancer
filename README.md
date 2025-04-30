@@ -48,9 +48,9 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/learnershakil/resume_ai_app.git
+git clone https://github.com/learnershakil/ai-resume-analyser-enhancer.git
 
-cd resume_ai_app
+cd ai-resume-analyser-enhancer
 
 # Make scripts executable
 chmod +x setup.sh run.sh
@@ -63,9 +63,9 @@ chmod +x setup.sh run.sh
 
 ```bash
 # Clone the repository
-git clone https://github.com/learnershakil/resume_ai_app.git
+git clone https://github.com/learnershakil/ai-resume-analyser-enhancer.git
 
-cd resume_ai_app
+cd ai-resume-analyser-enhancer
 
 # Create virtual environment
 python -m venv venv
