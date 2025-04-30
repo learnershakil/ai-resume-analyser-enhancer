@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Analysis Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Resume Analysis Results</h1>
+        <p>AI-powered analysis of your resume</p>
+      </header>
+
+      <main class="results-main">
+        <div class="results-header">
+          <h2>Analysis for: {{ filename }}</h2>
+          <a href="{{ url_for('download') }}" class="download-btn"
+            >Download Enhanced Resume</a
+          >
+        </div>
+
+        <div class="results-container">
+          <!-- Personal Information -->
+          <div class="result-section">
+            <h3>Personal Information</h3>
+            <div class="info-grid">
+              {% for key, value in analysis.personal_info.items() %}
+              <div class="info-item">
+                <span class="info-label">{{ key|capitalize }}</span>
+                <span class="info-value">{{ value }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="result-section">
+            <h3>Skills</h3>
+            <div class="skills-container">
+              {% for skill in analysis.skills %}
+              <span class="skill-tag">{{ skill }}</span>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="result-section">
+            <h3>Education</h3>
+            <div class="timeline">
+              {% for edu in analysis.education %}
+              <div class="timeline-item">
+                {% if edu is mapping %}
+                <h4>{{ edu.degree }}</h4>
+                <p>{{ edu.institution }}</p>
+                <p class="time-period">{{ edu.year }}</p>
+                {% if edu.details %}
+                <p class="details">{{ edu.details }}</p>
+                {% endif %} {% else %}
+                <p>{{ edu }}</p>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="result-section">
+            <h3>Experience</h3>
+            <div class="timeline">
+              {% for exp in analysis.experience %}
+              <div class="timeline-item">
+                {% if exp is mapping %}
+                <h4>{{ exp.position }}</h4>
+                <p>{{ exp.company }}</p>
+                <p class="time-period">{{ exp.duration }}</p>
+                {% if exp.details %}
+                <p class="details">{{ exp.details }}</p>
+                {% endif %} {% else %}
+                <p>{{ exp }}</p>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Suggestions -->
+          <div class="result-section suggestions">
+            <h3>Suggestions for Improvement</h3>
+            <ul class="suggestions-list">
+              {% for suggestion in analysis.suggestions %}
+              <li>{{ suggestion }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a href="{{ url_for('index') }}" class="btn">Upload Another Resume</a>
+          <a href="{{ url_for('download') }}" class="btn primary"
+            >Download Enhanced Resume</a
+          >
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Resume Analyzer & Enhancer | Powered by Gemini AI | Created by <a href='https://github.com/learnershakil' target='_blank'>&copy;Learnershakil</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

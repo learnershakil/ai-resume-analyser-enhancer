@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Analyzer & Enhancer</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Resume Analyzer & Enhancer</h1>
+        <p>
+          Upload your resume and get AI-powered analysis and suggestions for
+          improvement
+        </p>
+      </header>
+
+      <main>
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <div class="alerts">
+          {% for message in messages %}
+          <div class="alert">{{ message }}</div>
+          {% endfor %}
+        </div>
+        {% endif %} {% endwith %}
+
+        <div class="upload-card">
+          <h2>Upload Your Resume</h2>
+          <form
+            action="{{ url_for('upload_file') }}"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="file-input">
+              <label for="resume">Choose PDF file</label>
+              <input
+                type="file"
+                id="resume"
+                name="resume"
+                accept=".pdf"
+                required
+              />
+              <p class="filename" id="selected-filename">No file selected</p>
+            </div>
+
+            <div class="submit-section">
+              <button type="submit" class="submit-btn">Analyze Resume</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="info-section">
+          <h3>How it works</h3>
+          <ol>
+            <li>Upload your resume in PDF format</li>
+            <li>Our AI analyzes your resume and extracts key information</li>
+            <li>Get personalized suggestions to improve your resume</li>
+            <li>Download an enhanced version with the suggestions</li>
+          </ol>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Resume Analyzer & Enhancer | Powered by Gemini AI | Created by <a href='https://github.com/learnershakil' target='_blank'>&copy;Learnershakil</a></p>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
