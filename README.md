@@ -9,7 +9,7 @@
 
 </div>
 
-> **Transform your resume with AI-powered analysis and personalized enhancement suggestions**
+ **Transform your resume with AI-powered analysis and personalized enhancement suggestions**
 
 ## ✨ Features
 
@@ -32,7 +32,7 @@
 ## 🎮 Demo
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/learnershakil/resume_ai_app/main/static/img/screenshot.png" alt="Demo Screenshot" width="70%" height="auto">
+  <img src="https://raw.githubusercontent.com/learnershakil/resume_ai_app/main/static/img/demo.jpeg" alt="Demo Screenshot" width="70%" height="auto">
 </p>
 
 ## 🔧 Installation
