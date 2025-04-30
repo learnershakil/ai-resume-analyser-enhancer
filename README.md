@@ -32,7 +32,7 @@
 ## 🎮 Demo
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/learnershakil/resume_ai_app/main/static/img/demo.jpeg" alt="Demo Screenshot" width="70%" height="auto">
+  <img src="https://raw.githubusercontent.com/learnershakil/ai-resume-analyser-enhancer/refs/heads/main/static/img/demo.jpeg" alt="Demo Screenshot" width="70%" height="auto">
 </p>
 
 ## 🔧 Installation
