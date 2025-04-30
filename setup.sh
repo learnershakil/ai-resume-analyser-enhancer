@@ -18,13 +18,8 @@ fi
 echo "Installing dependencies..."
 pip install -r requirements.txt
 
-# Create fonts directory
-mkdir -p static/fonts
+# Create uploads directory
 mkdir -p static/uploads
-
-# Download DejaVu font for Unicode support
-echo "Downloading fonts for PDF generation..."
-curl -s -o static/fonts/DejaVuSansCondensed.ttf https://github.com/dejavu-fonts/dejavu-fonts/raw/master/ttf/DejaVuSansCondensed.ttf
 
 # Create a run script
 echo "#!/bin/bash

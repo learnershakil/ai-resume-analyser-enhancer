@@ -66,4 +66,4 @@ Alternatively, just use `./run.sh` which handles this automatically.
 - Upload resumes in PDF format
 - Extract key information using AI
 - Receive personalized improvement suggestions
-- Download enhanced resume with suggestions
+- Download enhanced resume analysis with suggestions
