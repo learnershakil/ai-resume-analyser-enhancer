@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume Analyzer & Enhancer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
@@ -14,8 +24,8 @@
       <header>
         <h1>Resume Analyzer & Enhancer</h1>
         <p>
-          Upload your resume and get AI-powered analysis and suggestions for
-          improvement
+          Transform your resume with AI-powered analysis and personalized
+          enhancement suggestions
         </p>
       </header>
 
@@ -34,9 +44,12 @@
             action="{{ url_for('upload_file') }}"
             method="post"
             enctype="multipart/form-data"
+            id="resume-form"
           >
             <div class="file-input">
-              <label for="resume">Choose PDF file</label>
+              <label for="resume">
+                <i class="fas fa-file-upload"></i> Choose PDF file
+              </label>
               <input
                 type="file"
                 id="resume"
@@ -44,11 +57,15 @@
                 accept=".pdf"
                 required
               />
-              <p class="filename" id="selected-filename">No file selected</p>
+              <div class="filename" id="selected-filename">
+                No file selected
+              </div>
             </div>
 
             <div class="submit-section">
-              <button type="submit" class="submit-btn">Analyze Resume</button>
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-magic"></i> Analyze Resume
+              </button>
             </div>
           </form>
         </div>
@@ -59,14 +76,27 @@
             <li>Upload your resume in PDF format</li>
             <li>Our AI analyzes your resume and extracts key information</li>
             <li>Get personalized suggestions to improve your resume</li>
-            <li>Download an enhanced version with the suggestions</li>
+            <li>Download an enhanced analysis with tailored recommendations</li>
           </ol>
         </div>
       </main>
 
       <footer>
-        <p>&copy; 2025 Resume Analyzer & Enhancer | Powered by Gemini AI | Created by <a href='https://github.com/learnershakil' target='_blank'>&copy;Learnershakil</a></p>
+        <p>
+          &copy; 2025 Resume Analyzer & Enhancer | Powered by
+          <span style="color: var(--secondary-color)">Gemini AI</span> | Created
+          by
+          <a href="https://github.com/learnershakil" target="_blank"
+            ><i class="fab fa-github"></i> Learnershakil</a
+          >
+        </p>
       </footer>
+    </div>
+
+    <!-- Loading indicator -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p class="loading-text">Analyzing your resume...</p>
     </div>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
